@@ -33,14 +33,14 @@
 		<module>driver-api</module>
 
 		<module>driver-pulsar</module>
-		<module>driver-kafka</module>
-		<module>driver-rabbitmq</module>
-		<module>driver-artemis</module>
-		<module>driver-bookkeeper</module>
-		<module>driver-rocketmq</module>
-		<module>driver-nats</module>
-		<module>driver-nats-streaming</module>
-		<module>driver-nsq</module>
+<!--		<module>driver-kafka</module>-->
+<!--		<module>driver-rabbitmq</module>-->
+<!--		<module>driver-artemis</module>-->
+<!--		<module>driver-bookkeeper</module>-->
+<!--		<module>driver-rocketmq</module>-->
+<!--		<module>driver-nats</module>-->
+<!--		<module>driver-nats-streaming</module>-->
+<!--		<module>driver-nsq</module>-->
 		<module>package</module>
 		<module>docker</module>
 	</modules>
@@ -138,5 +138,18 @@
 		  </dependency>
 		</dependencies>
 	</dependencyManagement>
+
+	<repositories>
+		<repository>
+			<id>spring</id>
+			<url>https://maven.aliyun.com/repository/spring</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
 
 </project>
