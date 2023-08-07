@@ -103,4 +103,5 @@ def create_quantile_chart(workload, title, y_label, time_series):
 
 
 if __name__ == '__main__':
-    create_charts(sys.argv[1:])
+    # create_charts(sys.argv[1:])
+    create_charts(["/Users/sanyue/tmp/pulsar-benchmark/batch2.json"])

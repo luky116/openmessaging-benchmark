@@ -22,12 +22,12 @@ driverClass: io.openmessaging.benchmark.driver.pulsar.PulsarBenchmarkDriver
 
 # Pulsar client-specific configuration
 client:
-  serviceUrl: pulsar://localhost:6650
-  httpUrl: http://localhost:8080
+  serviceUrl: pulsar://10.216.30.112:6650
+  httpUrl: http://10.216.30.112:8080
   ioThreads: 16
   connectionsPerBroker: 16
-  clusterName: local
-  namespacePrefix: benchmark/ns
+  clusterName: bjyt
+  namespacePrefix: test-tenant/test-namespace
   topicType: persistent
   persistence:
     ensembleSize: 3
