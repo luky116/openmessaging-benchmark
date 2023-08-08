@@ -1,4 +1,4 @@
 bin/benchmark \
---output results/$1/'100-partition,10-producer,10-consumer.json' \
+--output results/$1/'100-partition,10-producer,10-consumer' \
 --drivers driver-pulsar/pulsar-batched.yaml \
 workloads/pulsar/100partition-10producer-10consumer-100kb.yaml
