@@ -42,7 +42,7 @@ chartStyle = Style(
 #theme = pygal.style.CleanStyle
 theme = chartStyle
 fill = False
-
+filePath = "/Users/sanyue/code/open/openmessaging-benchmark/results/2city2room"
 
 def create_quantile_chart(workload, title, y_label, time_series):
     import math
@@ -53,7 +53,7 @@ def create_quantile_chart(workload, title, y_label, time_series):
                          100.0 - (100.0 / (10**x))),
                      show_dots=False, fill=fill,
                      stroke_style={'width': 2},
-                     show_y_guides=False, show_x_guides=True)
+                     show_y_guides=True, show_x_guides=False)
     chart.title = title
     # chart.stroke = False
 
@@ -73,7 +73,7 @@ def create_quantile_chart(workload, title, y_label, time_series):
 
 def create_multi_chart(svg_file_name, title, y_label_1, y_label_2, time_series):
     chart = pygal.XY(style=theme, dots_size=1, show_dots=False, stroke_style={'width': 2}, fill=fill,
-                     legend_at_bottom=True, show_x_guides=False, show_y_guides=False)
+                     legend_at_bottom=True, show_x_guides=False, show_y_guides=True)
     chart.title = title
     chart.human_readable = True
     chart.x_title = 'Time (seconds)'
@@ -114,7 +114,7 @@ def create_bar_chart(workload, title, y_label, x_label, data):
 
 def create_chart(workload, title, y_label, time_series):
     chart = pygal.XY(style=theme, dots_size=1, show_dots=False, stroke_style={'width': 2}, fill=fill,
-                     legend_at_bottom=True, show_x_guides=False, show_y_guides=False)
+                     legend_at_bottom=True, show_x_guides=False, show_y_guides=True)
     chart.title = title
 
     chart.human_readable = True
@@ -160,16 +160,16 @@ if __name__ == "__main__":
     aggregate = []
 
     if args.files is None:
-        file_name_template = f'{args.msg_size}-run-[0123456789]+-{args.durability}-{args.ack}-acks.json'
+        # file_name_template = f'.?sumer'
 
         # Get list of directories
-        for (dirpath, dirnames, filenames) in walk(args.results_dir):
+        for (dirpath, dirnames, filenames) in walk(filePath):
             for file in filenames:
-                if re.match(file_name_template, file):
-                    file_path = path.join(dirpath, file)
-                    data = json.load(open(file_path))
-                    data['file'] = file
-                    aggregate.append(data)
+                # if re.match(file_name_template, file):
+                file_path = path.join(dirpath, file)
+                data = json.load(open(file_path))
+                data['file'] = file
+                aggregate.append(data)
     else:
         for idx, file in enumerate(args.files):
             data = json.load(open(file))
