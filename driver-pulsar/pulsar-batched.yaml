@@ -42,8 +42,8 @@ client:
   namespacePrefix: test-tenant/test-namespace
   topicType: persistent
   persistence:
-    ensembleSize: 3
-    writeQuorum: 3
+    ensembleSize: 2
+    writeQuorum: 2
     ackQuorum: 2
     deduplicationEnabled: false
   tlsAllowInsecureConnection: false
