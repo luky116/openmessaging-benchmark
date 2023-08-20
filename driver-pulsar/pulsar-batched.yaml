@@ -22,9 +22,14 @@ driverClass: io.openmessaging.benchmark.driver.pulsar.PulsarBenchmarkDriver
 
 # Pulsar client-specific configuration
 client:
+  # 本地
+  serviceUrl: pulsar://pulsar01.infra.bjyt.qihoo.net:7651
+  httpUrl: http://pulsar01.infra.bjyt.qihoo.netd:7081
+
   # 北京
-  serviceUrl: pulsar://10.216.30.112:6650
-  httpUrl: http://10.216.30.112:8080
+#  serviceUrl: pulsar://10.216.30.112:6650
+#  httpUrl: http://10.216.30.112:8080
+
 #  serviceUrl: pulsar://pulsar01.infra.bjyt.qihoo.net:30281
 #  httpUrl: http://pulsar01.infra.bjyt.qihoo.net:30181
 
@@ -51,7 +56,8 @@ client:
 # Producer configuration
 producer:
   batchingEnabled: true
-  batchingMaxPublishDelayMs: 500
+  batchingMaxPublishDelayMs: 500`
+  # 1024*1024=1M
   batchingMaxBytes: 1048576
   blockIfQueueFull: true
   pendingQueueSize: 10000
