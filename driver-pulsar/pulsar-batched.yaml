@@ -38,7 +38,7 @@ client:
 #  httpUrl: http://10.176.193.57:8080
   ioThreads: 16
   connectionsPerBroker: 16
-  clusterName: bjyt
+  clusterName: local-cluster
   namespacePrefix: test-tenant/test-namespace
   topicType: persistent
   persistence:
