@@ -24,7 +24,7 @@ driverClass: io.openmessaging.benchmark.driver.pulsar.PulsarBenchmarkDriver
 client:
   # 本地
   serviceUrl: pulsar://pulsar01.infra.bjyt.qihoo.net:7651
-  httpUrl: http://pulsar01.infra.bjyt.qihoo.netd:7081
+  httpUrl: http://pulsar01.infra.bjyt.qihoo.net:7081
 
   # 北京
 #  serviceUrl: pulsar://10.216.30.112:6650
