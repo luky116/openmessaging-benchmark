@@ -20,7 +20,7 @@
 name: 1 topic / 1 partition / 1Kb
 
 topics: 1
-partitionsPerTopic: 1
+partitionsPerTopic: 10
 keyDistributor: "NO_KEY"
 messageSize: 1024
 payloadFile: "payload/payload-1Kb.data"
