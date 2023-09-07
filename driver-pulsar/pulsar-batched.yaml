@@ -27,8 +27,12 @@ client:
 #  httpUrl: http://pulsar01.infra.bjyt.qihoo.net:7081
 
   # 北京
-  serviceUrl: pulsar://10.216.30.112:6650
-  httpUrl: http://10.216.30.112:8080
+#  serviceUrl: pulsar://10.216.30.112:6650
+#  httpUrl: http://10.216.30.112:8080
+
+  # 自建物理机服务
+  serviceUrl: pulsar://pulsar01.test.bjmd.qihoo.net:6650
+  httpUrl: http://pulsar01.test.bjmd.qihoo.net:8080
 
 #  serviceUrl: pulsar://pulsar01.infra.bjyt.qihoo.net:30281
 #  httpUrl: http://pulsar01.infra.bjyt.qihoo.net:30181
