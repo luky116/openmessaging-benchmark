@@ -127,8 +127,8 @@ public class PulsarBenchmarkDriver implements BenchmarkDriver {
             // 修改，这里直接使用namespacePrefix作为namespace，不再添加后缀，方便控制NS的声明周期
             this.namespace = config.client.namespacePrefix;
 //            this.namespace = config.client.namespacePrefix + "-" + getRandomString();
-            adminClient.namespaces().createNamespace(namespace);
-            log.info("Created Pulsar namespace {}", namespace);
+//            adminClient.namespaces().createNamespace(namespace);
+//            log.info("Created Pulsar namespace {}", namespace);
 
             PersistenceConfiguration p = config.client.persistence;
             adminClient.namespaces().setPersistence(namespace,
