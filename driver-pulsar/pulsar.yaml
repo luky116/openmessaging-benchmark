@@ -27,7 +27,7 @@ client:
   ioThreads: 16
   connectionsPerBroker: 16
   clusterName: bjyt
-  namespacePrefix: test-tenant/test-namespace
+  namespacePrefix: test-tenant3/test-namespace
   topicType: persistent
   persistence:
     ensembleSize: 3

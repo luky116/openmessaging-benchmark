@@ -43,7 +43,7 @@ client:
   ioThreads: 16
   connectionsPerBroker: 16
   clusterName: local-cluster
-  namespacePrefix: test-tenant/test-namespace
+  namespacePrefix: test-tenant3/test-namespace
   topicType: persistent
   persistence:
     ensembleSize: 2
