@@ -60,7 +60,7 @@ client:
 # Producer configuration
 producer:
   batchingEnabled: true
-  batchingMaxPublishDelayMs: 500
+  batchingMaxPublishDelayMs: 10
   # 1024*1024=1M
   batchingMaxBytes: 1048576
   blockIfQueueFull: true
