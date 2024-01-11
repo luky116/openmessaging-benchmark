@@ -174,6 +174,7 @@ public class Benchmark {
         log.info("benchmark test done!");
         worker.close();
         log.info("benchmark test close done!");
+        System.exit(-1);
     }
 
     private static final ObjectMapper mapper = new ObjectMapper(new YAMLFactory())
