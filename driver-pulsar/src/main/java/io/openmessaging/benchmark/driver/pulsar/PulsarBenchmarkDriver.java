@@ -177,7 +177,9 @@ public class PulsarBenchmarkDriver implements BenchmarkDriver {
     @Override
     public CompletableFuture<BenchmarkConsumer> createConsumer(String topic, String subscriptionName,
             Optional<Integer> partition, ConsumerCallback consumerCallback) {
-        return client.newConsumer().priorityLevel(0).subscriptionType(SubscriptionType.Failover)
+        return client.newConsumer().priorityLevel(0)
+                .subscriptionType(SubscriptionType.Failover)
+                .receiverQueueSize(50000)
                 .messageListener((consumer, msg) -> {
                     consumerCallback.messageReceived(msg.getData(),
                             TimeUnit.MILLISECONDS.toNanos(msg.getPublishTime()));
