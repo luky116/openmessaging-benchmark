@@ -61,7 +61,7 @@ client:
 producer:
   batchingEnabled: true
   batchingMaxPublishDelayMs: 10
-  # 1024*1024=1M
-  batchingMaxBytes: 1048576
-  blockIfQueueFull: true
+  # 1024*1024*50=50M
+  batchingMaxBytes: 52428800
+  blockIfQueueFull: false
   pendingQueueSize: 10000
