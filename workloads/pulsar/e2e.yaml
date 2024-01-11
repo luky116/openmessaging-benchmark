@@ -26,7 +26,7 @@ messageSize: 100
 payloadFile: "payload/payload-100b.data"
 subscriptionsPerTopic: 1
 consumerPerSubscription: 10
-producersPerTopic: 1
+producersPerTopic: 2
 # 250MB/s
 producerRate: 26214400
 consumerBacklogSizeGB: 0
