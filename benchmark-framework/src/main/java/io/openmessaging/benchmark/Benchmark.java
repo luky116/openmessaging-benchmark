@@ -156,9 +156,9 @@ public class Benchmark {
                             : String.format("%s-%s-%s.json", workloadName, driverConfiguration.name,
                                     dateFormat.format(new Date()));
 
-                    log.info("Writing test result into {}", fileName);
+                    log.info("Writing test result into {} begin", fileName);
                     writer.writeValue(new File(fileName), result);
-
+                    log.info("Writing test result into {} done", fileName);
                     generator.close();
                 } catch (Exception e) {
                     log.error("Failed to run the workload '{}' for driver '{}'", workload.name, driverConfig, e);
@@ -171,6 +171,7 @@ public class Benchmark {
             });
         });
 
+        log.info("benchmark test done!");
         worker.close();
     }
 

@@ -200,8 +200,6 @@ public class PulsarBenchmarkDriver implements BenchmarkDriver {
         }
 
         log.info("Pulsar benchmark driver successfully shut down");
-        // todo：尝试自动退出JVM
-        System.exit(0);
     }
 
     private static final ObjectMapper mapper = new ObjectMapper(new YAMLFactory())
