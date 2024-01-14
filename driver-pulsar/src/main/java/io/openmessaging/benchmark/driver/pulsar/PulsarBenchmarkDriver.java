@@ -179,7 +179,9 @@ public class PulsarBenchmarkDriver implements BenchmarkDriver {
             Optional<Integer> partition, ConsumerCallback consumerCallback) {
         return client.newConsumer().priorityLevel(0)
                 .subscriptionType(SubscriptionType.Failover)
-                .receiverQueueSize(50000)
+                // 通过 Math.min(conf.getReceiverQueueSize(),conf.getMaxTotalReceiverQueueSizeAcrossPartitions() / numPartitions); 来计算每个分区的数据量
+                .receiverQueueSize(500000)
+                .maxTotalReceiverQueueSizeAcrossPartitions(5000000)
                 .messageListener((consumer, msg) -> {
                     consumerCallback.messageReceived(msg.getData(),
                             TimeUnit.MILLISECONDS.toNanos(msg.getPublishTime()));
