@@ -105,8 +105,10 @@ public class PulsarBenchmarkDriver implements BenchmarkDriver {
 
         producerBuilder = client.newProducer().enableBatching(config.producer.batchingEnabled)
                 .batchingMaxPublishDelay(config.producer.batchingMaxPublishDelayMs, TimeUnit.MILLISECONDS)
-                .blockIfQueueFull(config.producer.blockIfQueueFull).batchingMaxBytes(config.producer.batchingMaxBytes)
-                .maxPendingMessages(config.producer.pendingQueueSize).batchingMaxMessages(Integer.MAX_VALUE)
+                .blockIfQueueFull(config.producer.blockIfQueueFull)
+                .batchingMaxBytes(config.producer.batchingMaxBytes)
+                .maxPendingMessages(config.producer.pendingQueueSize)
+                .batchingMaxMessages(Integer.MAX_VALUE)
                 .maxPendingMessagesAcrossPartitions(Integer.MAX_VALUE);
 
         try {
