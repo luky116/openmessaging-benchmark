@@ -40,6 +40,7 @@ import org.apache.pulsar.common.policies.data.BacklogQuota;
 import org.apache.pulsar.common.policies.data.BacklogQuota.RetentionPolicy;
 import org.apache.pulsar.common.policies.data.PersistencePolicies;
 import org.apache.pulsar.common.policies.data.TenantInfo;
+import org.apache.pulsar.common.policies.data.TenantInfoImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -118,7 +119,7 @@ public class PulsarBenchmarkDriver implements BenchmarkDriver {
             if (!adminClient.tenants().getTenants().contains(tenant)) {
                 try {
                     adminClient.tenants().createTenant(tenant,
-                            new TenantInfo(Collections.emptySet(), Sets.newHashSet(cluster)));
+                            new TenantInfoImpl(Collections.emptySet(), Sets.newHashSet(cluster)));
                 } catch (ConflictException e) {
                     // Ignore. This can happen when multiple workers are initializing at the same
                     // time
