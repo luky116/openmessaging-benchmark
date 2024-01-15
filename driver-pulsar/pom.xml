@@ -31,6 +31,7 @@
 	<artifactId>driver-pulsar</artifactId>
 	<properties>
 		<pulsar.version>3.0.2</pulsar.version>
+		<jackson.version>2.13.4</jackson.version>
 	</properties>
 
 	<dependencies>
@@ -41,15 +42,34 @@
 		</dependency>
 
 		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-core</artifactId>
+			<version>${jackson.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>${jackson.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-annotations</artifactId>
+			<version>${jackson.version}</version>
+		</dependency>
+
+		<dependency>
 			<groupId>org.apache.pulsar</groupId>
 			<artifactId>pulsar-client-all</artifactId>
 			<version>${pulsar.version}</version>
 		</dependency>
-		
-		<dependency>
-			<groupId>com.google.guava</groupId>
-			<artifactId>guava</artifactId>
-		</dependency>
+
 	</dependencies>
 
 	<repositories>
