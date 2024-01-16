@@ -60,8 +60,11 @@ client:
 # Producer configuration
 producer:
   batchingEnabled: true
-  batchingMaxPublishDelayMs: 10
-  # 1024*1024*5=5M
-  batchingMaxBytes: 5242880
+  # 越小E2E延时越小
+  batchingMaxPublishDelayMs: 1
+  # 1024*1024*4=4M
+  batchingMaxBytes: 4194304
+  # 测试的 1MB
+#  batchingMaxBytes: 1048576
   blockIfQueueFull: true
   pendingQueueSize: 10000

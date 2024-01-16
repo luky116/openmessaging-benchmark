@@ -105,11 +105,14 @@ public class PulsarBenchmarkDriver implements BenchmarkDriver {
         log.info("Created Pulsar admin client for HTTP URL {}", config.client.httpUrl);
 
         producerBuilder = client.newProducer().enableBatching(config.producer.batchingEnabled)
+                // 注意，这个时间太大，会影响生产的延时，建议设置小点
                 .batchingMaxPublishDelay(config.producer.batchingMaxPublishDelayMs, TimeUnit.MILLISECONDS)
                 .blockIfQueueFull(config.producer.blockIfQueueFull)
                 .batchingMaxBytes(config.producer.batchingMaxBytes)
                 .maxPendingMessages(config.producer.pendingQueueSize)
                 .batchingMaxMessages(Integer.MAX_VALUE)
+//                .enableChunking(true)
+//                .chunkMaxMessageSize(config.producer.batchingMaxBytes-1024)
                 .maxPendingMessagesAcrossPartitions(Integer.MAX_VALUE);
 
         try {
