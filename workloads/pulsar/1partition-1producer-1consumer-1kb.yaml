@@ -22,12 +22,11 @@ name: 1 topic / 1 partition / 1Kb
 topics: 1
 partitionsPerTopic: 1
 keyDistributor: "NO_KEY"
-messageSize: 100
-payloadFile: "payload/payload-100b.data"
+messageSize: 1024
+payloadFile: "payload/payload-1Kb.data"
 subscriptionsPerTopic: 1
 consumerPerSubscription: 1
-producersPerTopic: 10
-# 250MB/s
-producerRate: 26214400
+producersPerTopic: 1
+producerRate: 9000000
 consumerBacklogSizeGB: 0
 testDurationMinutes: 5
